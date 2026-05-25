@@ -1,0 +1,71 @@
+
+.Home {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+  padding-top: 40px;
+}
+
+.Home_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Home_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-align: center;
+}
+
+.Home_content h1 {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+.Home_content p {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+}
+
+.Home_btn {
+  background: #3e2f1c;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.Home_btn:hover {
+  background: #5a3e2b;
+}
+
+.Home_carrousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: 100%;
+}
+
+.Home_productsList {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.Home_btnPrevious,
+.Home_btnNext {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+}

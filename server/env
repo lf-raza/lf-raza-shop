@@ -1,0 +1,2 @@
+STRIPE_SECRET_KEY = sk_test_cle_a_creer
+STRIPE_WEBHOOK_SECRET = webhk_test_cle_a_creer

@@ -1,0 +1,79 @@
+.productCard {
+  padding: 32px;
+  width: 380px;
+  min-height: 460px;
+  text-align: center;
+  background-color: #fff8ec;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(58, 36, 21, 0, 12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-sizing: border-box;
+}
+
+.ProductCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(58,36,21,0,18);
+}
+
+.ProductCard h3 {
+  font-size: 22px;
+  line-height: 1.25;
+  color: #3a2415;
+  margin-bottom: 22px;
+  min-height: 60px;
+  border-left: 4px solid #c89545;
+  padding-left: 14px;
+  text-align: left;
+  min-height: 55px;
+}
+
+.ProductCard_img {
+  width: 100%;
+  max-width: 250px;
+  height: 200x;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+
+.ProductCard_description {
+  font-size: 15px;
+  color: #6b5a4a;
+  min-height: 45px;
+  margin-bottom: 10px;
+}
+
+.ProductCard_price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #8a5a20;
+  margin-bottom: 18px;
+}
+
+.ProductCard button {
+  background-color: #4b2e14;
+  color: white;
+  border: none;
+  padding: 11px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+.ProductCard button:hover {
+  background-color:#2f1b0d;
+}
+
+.ProductCard_produit {
+  color: #4b2e14;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+ProductCard_produit:hover {
+  text-decoration: underline;
+}

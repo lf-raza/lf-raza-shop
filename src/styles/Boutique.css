@@ -1,0 +1,36 @@
+.Boutique {
+    padding-left: 8%;
+    padding-right: 8%;
+    padding-bottom: 120px;
+    padding-top: 20px;
+    background-color: #faf7f2;
+    min-height: 100vh;
+}
+
+.Boutique h1 {
+    font-size: 42px;
+    margin-bottom: 70 px;
+    color: #2b1a10;
+    text-align: center;
+}
+
+.Boutique_category {
+    max-width: 1100px;
+    margin: 0 auto 100px;
+}
+
+.Boutique_category h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #3a2415;
+    margin-bottom: 55px;
+    letter-spacing: 1px;
+}
+
+.Boutique_products {
+    display: grid;
+    grid-template-columns: repeat(2, 380px);
+    row-gap: 80px;
+    column-gap: 120px;
+    justify-content: center;
+}
