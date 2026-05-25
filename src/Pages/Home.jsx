@@ -1,4 +1,4 @@
-import Home_image from "../assets/Hero.png";
+import Home_image from "../assets/hero.png";
 import products from "../Data/products";
 import ProductCard from "../Components/ProductCard";
 import '../styles/Home.css';
