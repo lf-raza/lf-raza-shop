@@ -1,17 +1,17 @@
 import {Routes, Route} from "react-router-dom";
-import Home from "./pages/Home";
-import AboutUs from "./pages/AboutUs";
-import Boutique from "./pages/Boutique";
-import ProductPage from "./pages/ProductPage";
-import Cart from "./pages/Cart";
-import ContactForm from "./pages/ContactForm";
-import MyAccount from "./pages/MyAccount";
-import CGV from "./pages/Legal/CGV";
-import Livraison from "./pages/Legal/Livraison";
-import MentionsLegales from "./pages/Legal/MentionsLegales";
+import Home from "./Pages/Home";
+import AboutUs from "./Pages/AboutUs";
+import Boutique from "./Pages/Boutique";
+import ProductPage from "./Pages/ProductPage";
+import Cart from "./Pages/Cart";
+import ContactForm from "./Pages/ContactForm";
+import MyAccount from "./Pages/MyAccount";
+import CGV from "./Pages/Legal/CGV";
+import Livraison from "./Pages/Legal/Livraison";
+import MentionsLegales from "./Pages/Legal/MentionsLegales";
 import Privacy from "./Pages/Legal/Privacy";
-import FAQ from "./pages/Legal/FAQ";
-import Success from "./pages/Success";
+import FAQ from "./Pages/Legal/FAQ";
+import Success from "./Pages/Success";
 import { useState } from "react";
 
 
