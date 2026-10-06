@@ -1,0 +1,88 @@
+.About {
+  background-color: #d9c9b7;
+  color: #7a4a34;
+  padding: 50px 70px;
+}
+
+.About_title {
+  margin: 0 0 30px;
+  font-size: 34px;
+  font-weight: 500;
+  color: #b2855c;
+}
+
+.About_container {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+}
+
+.About_image-wrapper {
+  flex: 0 0 280px;
+}
+
+.About_image {
+  width: 280px;
+  height: 380px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.About_content {
+  flex: 1;
+}
+
+.About_quote {
+  width: 650px;
+  margin: 0 auto 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 0.85;
+}
+
+.About_quote-top {
+  align-self: flex-start;
+  font-size: 48px;
+  color: #b2855c;
+}
+
+.About_quote-middle {
+  align-self: center;
+  font-size: 58px;
+  color: #6b3a28;
+}
+
+.About_quote-bottom {
+  align-self: flex-end;
+  font-size: 38px;
+  color: #b2855c;
+}
+
+.About_texts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+}
+
+.About_column p {
+  margin: 0 0 22px;
+  font-size: 18px;
+  line-height: 1.25;
+  color: #b2855c;
+}
+
+.About_column em {
+  font-style: italic;
+}
+
+.About_final-quote {
+  margin-top: 35px;
+  text-align: center;
+  font-weight: 900;
+  color: #5a2d23 !important;
+  line-height: 1;
+}

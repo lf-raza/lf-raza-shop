@@ -12,10 +12,14 @@ import MentionsLegales from "./Pages/Legal/MentionsLegales";
 import Privacy from "./Pages/Legal/Privacy";
 import FAQ from "./Pages/Legal/FAQ";
 import Success from "./Pages/Success";
+import AdminPage from "./Pages/AdminPage";
+import LoginPage from "./Pages/LoginPage";
+import ProtectedAdminRoute from "./Components/ProtectedAdminRoute";
+import ProtectedMyAccountRoute from "./Components/ProtectedMyAccountRoute";
 import { useState } from "react";
 
 
-function AppRoutes({addToCart, removeFromCart, increaseQuantity, decreaseQuantity, cart}) {
+function AppRoutes({ addToCart, removeFromCart, increaseQuantity, decreaseQuantity, cart, setCart, products, loadingProducts, productCategory, loadingProductCategory, user, profile, setProfile, checkUserIdentity, loadingUser, loadingProfile, session }) {
     return (
         <Routes>
             <Route
@@ -24,6 +28,10 @@ function AppRoutes({addToCart, removeFromCart, increaseQuantity, decreaseQuantit
                 <Home
                     addToCart={addToCart}
                     removeFromCart={removeFromCart}
+                    products={products}
+                    loadingProducts={loadingProducts}
+                    productCategory={productCategory}
+                    loadingProductCategory={loadingProductCategory}
                 />
                 }
             />
@@ -41,6 +49,10 @@ function AppRoutes({addToCart, removeFromCart, increaseQuantity, decreaseQuantit
                 <Boutique
                     addToCart={addToCart}
                     removeFromCart={removeFromCart}
+                    products={products}
+                    loadingProducts={loadingProducts}
+                    productCategory={productCategory}
+                    loadingProductCategory={loadingProductCategory}
                 />
                 }
             />
@@ -49,6 +61,8 @@ function AppRoutes({addToCart, removeFromCart, increaseQuantity, decreaseQuantit
                 element={
                 <ProductPage
                     addToCart={addToCart}
+                    products={products}
+                    loadingProducts={loadingProducts}
                 />
                 }
             />
@@ -61,6 +75,9 @@ function AppRoutes({addToCart, removeFromCart, increaseQuantity, decreaseQuantit
                     decreaseQuantity={decreaseQuantity}
                     removeFromCart={removeFromCart}
                     cart={cart}
+                    products={products}
+                    loadingProducts={loadingProducts}
+                    session={session}
                 />
                 }
             />
@@ -75,9 +92,18 @@ function AppRoutes({addToCart, removeFromCart, increaseQuantity, decreaseQuantit
             <Route
                 path="/MyAccount"
                 element={
-                <MyAccount
-                    
-                />
+                    <ProtectedMyAccountRoute 
+                        user={user} 
+                        profile={profile}
+                        loadingUser={loadingUser}
+                        loadingProfile={loadingProfile}
+                    >
+                        <MyAccount 
+                            user={user} 
+                            profile={profile}
+                            setProfile={setProfile}
+                        />
+                    </ProtectedMyAccountRoute>
                 }
             />  
             <Route
@@ -124,10 +150,38 @@ function AppRoutes({addToCart, removeFromCart, increaseQuantity, decreaseQuantit
                 path="/Success"
                 element={
                 <Success
+                    setCart={setCart}
                     
                 />
                 }
-            />       
+            />
+            <Route
+                path="/AdminPage"
+                element={
+                    <ProtectedAdminRoute
+                        user={user} 
+                        profile={profile}
+                        loadingUser={loadingUser}
+                        loadingProfile={loadingProfile}
+                    >
+                        <AdminPage
+                        
+                        />
+                    </ProtectedAdminRoute>             
+                }
+            /> 
+            <Route
+                path="/LoginPage"
+                element={
+                <LoginPage
+                    user={user}
+                    profile={profile}
+                    checkUserIdentity={checkUserIdentity}
+                    loadingUser={loadingUser}
+                    loadingProfile={loadingProfile}                  
+                />
+                }
+            />        
         </Routes>
     );
 }

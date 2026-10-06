@@ -1,0 +1,224 @@
+.MyAccount {
+  min-height: 100vh;
+  padding: 60px 24px;
+  background-color: #faf4ec;
+  color: #3a2111;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 36px;
+}
+
+/* Menu latéral */
+.MyAccount_liste {
+  background-color: #fffaf3;
+  border-radius: 18px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(75, 46, 20, 0.12);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.MyAccount_liste ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.MyAccount_liste li {
+  margin: 0;
+}
+
+/* Boutons navigation */
+.MyAccountButton {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid #d7bfa5;
+  border-radius: 999px;
+  background-color: #fff8ef;
+  color: #4b2e14;
+  font-size: 15px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.MyAccountButton:hover {
+  background-color: #f2e2cf;
+  border-color: #b99370;
+}
+
+.MyAccountButton.active {
+  background-color: #5a3420;
+  color: #fffaf3;
+  border-color: #5a3420;
+  box-shadow: 0 6px 16px rgba(90, 52, 32, 0.22);
+}
+
+/* Zone contenu */
+.MyAccount > div:not(.MyAccount_liste) {
+  background-color: #fffaf3;
+  border-radius: 22px;
+  padding: 36px;
+  box-shadow: 0 8px 24px rgba(75, 46, 20, 0.12);
+}
+
+.MyAccount h1 {
+  margin: 0 0 30px;
+  font-size: clamp(34px, 4vw, 56px);
+  color: #4b2e14;
+  line-height: 1.05;
+}
+
+/* Sections internes */
+.MyAccount section {
+  margin-bottom: 28px;
+}
+
+.MyAccount h2 {
+  margin: 0 0 20px;
+  font-size: 28px;
+  color: #5a3420;
+}
+
+.MyAccount p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4b2e14;
+}
+
+/* Cartes commandes */
+.order-card,
+.client-order-card,
+.account-info-card {
+  background-color: #fff8ef;
+  border: 1px solid #ead5bd;
+  border-radius: 16px;
+  padding: 22px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 14px rgba(75, 46, 20, 0.08);
+}
+
+.order-card h3,
+.client-order-card h3 {
+  margin: 0 0 12px;
+  font-size: 22px;
+  color: #4b2e14;
+}
+
+.order-card p,
+.client-order-card p,
+.account-info-card p {
+  margin: 6px 0;
+}
+
+/* Détails produits */
+.order-items,
+.client-order-items {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #e2cbb1;
+}
+
+.order-item,
+.client-order-item {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ead8c3;
+  font-size: 15px;
+}
+
+.order-item:last-child,
+.client-order-item:last-child {
+  border-bottom: none;
+}
+
+/* Formulaire infos client si bouton modifier */
+.account-edit-form {
+  display: grid;
+  gap: 18px;
+}
+
+.account-edit-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-weight: 700;
+  color: #4b2e14;
+}
+
+.account-edit-form input {
+  padding: 12px 14px;
+  border: 1px solid #d7bfa5;
+  border-radius: 10px;
+  background-color: #fffaf3;
+  color: #3a2111;
+  font-size: 15px;
+}
+
+.account-edit-form input:focus {
+  outline: none;
+  border-color: #6a3f2b;
+  box-shadow: 0 0 0 2px rgba(106, 63, 43, 0.16);
+}
+
+.account-edit-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+}
+
+/* Actions */
+.account-edit-actions,
+.account-actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.account-edit-actions button,
+.account-actions button,
+.logout-button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 999px;
+  background-color: #6a3f2b;
+  color: #fffaf3;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.account-edit-actions button:hover,
+.account-actions button:hover,
+.logout-button:hover {
+  background-color: #4b2e14;
+  transform: translateY(-1px);
+}
+
+/* Bouton secondaire */
+.account-edit-actions button:nth-child(2) {
+  background-color: #ead8c3;
+  color: #4b2e14;
+}
+
+.account-edit-actions button:nth-child(2):hover {
+  background-color: #dec3a5;
+}
+
+/* Chargement */
+.MyAccount-loading {
+  min-height: 60vh;
+  display: grid;
+  place-items: center;
+  background-color: #faf4ec;
+  color: #4b2e14;
+  font-size: 20px;
+  font-weight: 700;
+}

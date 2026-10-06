@@ -1,70 +1,79 @@
 .Footer {
-  background-color: #4b2e14;
-  color: #fffaf0;
-  padding: 50px 40px 20px;
-  margin-top: 0;
+  color: #4b241b;
+  padding: 0 70px 10px;
+  background-color: #d9c7b2;
+  margin-top: -60px;
 }
 
-.Footer_content {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr;
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
+.Footer_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0;
 }
 
-.Footer_informations h3,
-.Footer_informations h4 {
-  margin-bottom: 16px;
+.Footer_line {
+  width: 70%;
+  margin: 0 auto -50px;
+  border-top: 1px dotted #8b6a55;
+}
+
+
+.Footer_top-left h1 {
+  margin: 0 0 30px;
+  font-size: 64px;
+  text-transform: uppercase;
+  color: #4b241b;
+}
+
+.Footer_top-left p {
+  margin: 0 0 35px;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.5px;
+  color: #4b241b;
 }
 
-.Footer_informations h3 {
-  font-size: 24px;
+.Footer_top-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 50px;
+  padding-top: 0px;
 }
 
-.Footer_informations h4 {
-  font-size: 16px;
+.Footer_logo-img {
+  width: 350px;
+  height: auto;
+  object-fit: contain;
+}
+
+.Footer_bottom {
+  border-top: 1px dotted #8b6a55;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+  font-size: 12px;
+  font-weight: 700;
   text-transform: uppercase;
 }
 
-.Footer_informations p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #f4e8d0;
-}
-
-.Footer_informations ul {
+.Footer_bottom-right ul {
+  display: flex;
+  align-items: center;
+  gap: 34px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.Footer_informations li {
-  margin-bottom: 10px;
-}
-
-.Footer_informations a {
-  color: #f4e8d0;
+.Footer_bottom-right a {
   text-decoration: none;
-  font-size: 14px;
+  color: #7a4a34;
+  font-weight: 700;
+  font-size: 16px;
 }
 
-.Footer_informations a:hover {
-  color: white;
-  text-decoration: underline;
-}
-
-.Footer_bottom {
-  max-width: 1200px;
-  margin: 35px auto 0;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0, 25);
-  text-align: center;
-}
-
-.Footer_bottom p {
-  font-size: 13px;
-  color: #e8d8bd;
+.Footer_bottom-right a:hover {
+  color: #3a2415;
 }

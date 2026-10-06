@@ -5,17 +5,30 @@ function ProductCard({ product, addToCart, removeFromCart }) {
   return (
     <div className="ProductCard">
       <h3> {product.name} </h3> 
-      <img src={product.image} alt={product.name} className="ProductCard_img"/> 
-      <p className="ProductCard_description"> {product.description} </p>
+      {/* Cadre de l'image */}
+      <div className="ProductCard_imgContainer">
+        <img
+           src={product.image_url}
+           alt={product.name}
+           className="ProductCard_img"
+        />
+      </div> 
+      <p className="ProductCard_description"> {product.quantityDescription} </p>
       <p className="ProductCard_price"> {product.price} €</p>
-      <button onClick={()=> addToCart(product)} >Ajouter au panier</button>
-      <span>
-         <Link to={`/Boutique/${product.id}`}
+      
+      <div className="ProductCard_actions">
+        <button onClick={()=> addToCart(product)} >
+          Ajouter au panier
+        </button>
+      
+        <Link 
+           to={`/Boutique/${product.id}`}
             className="ProductCard_produit" 
          >
             En savoir plus
          </Link>
-      </span>
+
+      </div>
       {/*
       <span>
         <button onClick={()=> removeFromCart(product.id)} >Supprimer panier</button>

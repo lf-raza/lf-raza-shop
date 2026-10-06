@@ -1,36 +1,152 @@
 .Boutique {
-    padding-left: 8%;
-    padding-right: 8%;
-    padding-bottom: 120px;
-    padding-top: 20px;
-    background-color: #faf7f2;
-    min-height: 100vh;
+  padding-left: 8%;
+  padding-right: 8%;
+  padding-bottom: 350px;
+  padding-top: 120px;
+
+  background-color: #d9c7b2;
+  color: #4b241b;
+
+  min-height: 100vh;
 }
+
+/* Titre principal BOUTIQUE */
 
 .Boutique h1 {
-    font-size: 42px;
-    margin-bottom: 70 px;
-    color: #2b1a10;
-    text-align: center;
+  font-size: 130px;
+  margin-bottom: 180px;
+  margin-top: 8px;
+  
+  letter-spacing: 10px;
+  color: #4b241b;
+  text-align: center;
+  text-transform: uppercase;
+
+  font-family: "LimelightCustom", serif !important;
+  font-weight: 900;
 }
+
+/* Bloc complet d'une catégorie */
 
 .Boutique_category {
-    max-width: 1100px;
-    margin: 0 auto 100px;
+  max-width: 1200px;
+  margin: 0 auto 0px;
 }
+
+/* Traits au-dessus et en-dessous du titre */
+
+.Boutique_category-line {
+  width: 400px;
+  max-width: 70%;
+  height: 1px;
+
+  margin: 0 auto 22px;
+
+  border-top: 1px dotted #8b6a55;
+}
+
+/* Titre VANILLE / SACS / HUILE ESSENTIELLE / MAISON */
 
 .Boutique_category h2 {
-    text-align: center;
-    font-size: 30px;
-    color: #3a2415;
-    margin-bottom: 55px;
-    letter-spacing: 1px;
+  text-align: center;
+
+  font-size: clamp(3rem, 5vw, 5rem);
+  color: #74402d;
+
+  margin: 0;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  font-family: "LimelightCustom", serif !important;
+  font-weight: 900;
+  line-height: 1;
 }
 
+/* Le deuxième trait après le titre */
+
+.Boutique_category h2 + .Boutique_category-line {
+  margin-top: 20px;
+  margin-bottom: 130px;
+}
+
+/* Zone produits */
+
 .Boutique_products {
-    display: grid;
-    grid-template-columns: repeat(2, 380px);
-    row-gap: 80px;
-    column-gap: 120px;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(2, 290px);
+
+  row-gap: 90px;
+  column-gap: 120px;
+
+  justify-content: start;
+  align-items: start;
+}
+
+/* Quand il n'y a qu'un seul produit dans une catégorie */
+
+.Boutique_products:has(> :only-child) {
+  grid-template-columns: 280px;
+}
+
+/* Exceptions par catégorie venant de product.slug */
+
+.Boutique_category_vanille {
+  margin-bottom: 150px;
+}
+
+.Boutique_category_rafia {
+  margin-bottom: 150px;
+}
+
+.Boutique_category_cabas {
+  margin-bottom: 150px;
+}
+
+.Boutique_category_huile {
+  margin-bottom: 150px;
+}
+
+/* Responsive tablette */
+
+@media (max-width: 900px) {
+  .Boutique {
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-top: 100px;
+  }
+
+  .Boutique_products {
+    grid-template-columns: repeat(2, minmax(180px, 240px));
+    column-gap: 50px;
+    row-gap: 70px;
+  }
+
+  .Boutique_category h2 {
+    font-size: clamp(2.5rem, 7vw, 4rem);
+  }
+}
+
+/* Responsive mobile */
+
+@media (max-width: 600px) {
+  .Boutique {
+    padding-left: 24px;
+    padding-right: 24px;
+    padding-top: 90px;
+  }
+
+  .Boutique_products {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 60px;
+  }
+
+  .Boutique_category {
+    margin-bottom: 120px;
+  }
+
+  .Boutique_category-line {
+    width: 220px;
+  }
 }

@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
+import {useEffect} from "react";
 
 
-export default function Success() {
+export default function Success({setCart}) {
+    useEffect(() => {
+        setCart([]);
+        localStorage.removeItem("cart");
+    },[setCart]);
+
     return(
         <div>
             <h1>Paiement réussi !</h1>

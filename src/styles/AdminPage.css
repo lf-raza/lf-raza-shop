@@ -1,0 +1,184 @@
+.AdminPage {
+  min-height: 100vh;
+  padding: 50px 60px;
+  background-color: #e4d2bd;
+  color: #2f1b0c;
+  font-family: inherit;
+}
+
+/* Titres de sections */
+.AdminPage h1 {
+  margin: 0 0 28px;
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 800;
+  color: #2f1b0c;
+  letter-spacing: 0.5px;
+}
+
+/* Espacement entre les blocs de commandes */
+.AdminPage h1:not(:first-child) {
+  margin-top: 70px;
+}
+
+/* Table principale */
+.AdminPage > table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  background-color: #fff8ef;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(47, 27, 12, 0.12);
+}
+
+/* En-tête */
+.AdminPage thead {
+  background-color: #5a3420;
+  color: #fff8ef;
+}
+
+.AdminPage th {
+  padding: 16px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Cellules */
+.AdminPage td {
+  padding: 14px;
+  font-size: 14px;
+  vertical-align: top;
+  border-bottom: 1px solid #e2cdb6;
+}
+
+/* Lignes */
+.AdminPage tbody tr.orders {
+  background-color: #fff8ef;
+  transition: background-color 0.2s ease;
+}
+
+.AdminPage tbody tr.orders:hover {
+  background-color: #f5eadc;
+}
+
+/* Colonnes longues */
+.AdminPage td:nth-child(3),
+.AdminPage td:nth-child(4) {
+  max-width: 220px;
+  word-break: break-word;
+}
+
+/* Montant */
+.AdminPage td:nth-child(7) {
+  font-weight: 700;
+  color: #4b2e14;
+  white-space: nowrap;
+}
+
+/* Select statut */
+.AdminPage select {
+  min-width: 150px;
+  padding: 8px 10px;
+  border: 1px solid #b99370;
+  border-radius: 8px;
+  background-color: #fffaf3;
+  color: #3a2111;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.AdminPage select:focus {
+  outline: none;
+  border-color: #6a3f2b;
+  box-shadow: 0 0 0 2px rgba(106, 63, 43, 0.18);
+}
+
+/* Bouton + / - */
+.orderItems_open {
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 50%;
+  background-color: #6a3f2b;
+  color: #fff8ef;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.orderItems_open:hover {
+  background-color: #4b2e14;
+  transform: scale(1.05);
+}
+
+/* Table détails produits */
+.orderItems {
+  width: 100%;
+  margin-top: 14px;
+  border-collapse: collapse;
+  background-color: #f7eadb;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px #e0c5a9;
+}
+
+.orderItems thead {
+  background-color: #8a5a38;
+  color: #fff8ef;
+}
+
+.orderItems th {
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
+.orderItems td {
+  padding: 10px 12px;
+  font-size: 13px;
+  border-bottom: 1px solid #ddc2a5;
+}
+
+.orderItemsUnit:last-child td {
+  border-bottom: none;
+}
+
+/* Message chargement */
+.AdminPage > div,
+.AdminPage .loading {
+  font-size: 20px;
+  font-weight: 600;
+  color: #4b2e14;
+}
+
+.admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 40px;
+  border-radius: 14px;
+}
+
+/* Responsive tablette/mobile */
+@media (max-width: 900px) {
+  .AdminPage {
+    padding: 32px 18px;
+  }
+
+  .AdminPage h1 {
+    font-size: 34px;
+  }
+
+  .AdminPage > table,
+  .admin-table-wrapper table {
+    min-width: 950px;
+  }
+
+  .AdminPage th,
+  .AdminPage td {
+    font-size: 13px;
+    padding: 12px 10px;
+  }
+}

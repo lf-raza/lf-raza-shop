@@ -2,70 +2,663 @@
 .Home {
   position: relative;
   width: 100%;
-  height: 50vh;
+  max-width: 100%;
+  min-height: 100vh;
+  background-color: #d9c7b2;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  padding-top: 120px;
+}
+
+/* Zone principale du carrousel */
+
+.Home_carrousel {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 120px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Bloc du titre VANILLE BOURBON */
+
+.Home_content-top {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 100%;
+  text-align: center;
+  z-index: 2;
+}
+
+.Home_title {
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  max-width: 100%;
   overflow: hidden;
-  padding-top: 40px;
+
+  font-family: "LimelightCustom", serif;
+  font-size: clamp(4rem, 9vw, 8rem);
+  font-weight: 900;
+  line-height: 1;
+
+  color: #74402d;
+  text-transform: uppercase;
+  letter-spacing: 15px;
+
+  gap: clamp(180px, 25vw, 570px);
+}
+
+
+/* Exceptions titres caroussel home*/
+
+/* VANILLE */
+.Home_title.home_titlevanille  {
+  gap: clamp(180px, 25vw, 400px);
+}
+
+/* SETS */
+.Home_title.home_titlesets  {
+  gap: clamp(180px, 25vw, 600px);
+}
+
+/* HUILE */
+.Home_title.home_titlehuile  {
+  gap: clamp(180px, 25vw, 400px);
+}
+
+
+/* Image centrale vanille */
+
+.Home_image-wrapper {
+  position: absolute;
+  left: 51.5%;
+  top: 40%;
+  transform: translate(-63%, -50%);
+
+  z-index: 4;
+  pointer-events: none;
 }
 
 .Home_image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: clamp(260px, 45vw, 850px);
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
-.Home_content {
+/* Exceptions images caroussel home*/
+
+/* SETS */
+.Home_image.Home_image-rafia {
+  width: clamp(260x, 38vw, 900px);
+}
+
+.Home_wrapper-rafia {
+  left: 47%;
+  top: 43%;
+  transform: translate(-50%, -50%);
+}
+
+/* HUILE */
+.Home_image.Home_image-huile {
+  width: clamp(240px, 35vw, 850px);
+}
+
+.Home_wrapper-huile {
+  left: 50%;
+  top: 35%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* Flèches gauche / droite */
+
+.Home_btnPreviousHome,
+.Home_btnNextHome {
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  text-align: center;
+  transform: translateY(-50%);
+
+  background: transparent;
+  border: none;
+
+  color: #74402d;
+  font-size: 36px;
+  font-weight: 300;
+
+  cursor: pointer;
+  z-index: 10;
 }
 
-.Home_content h1 {
-  font-size: 4rem;
-  margin-bottom: 16px;
+.Home_btnPreviousHome {
+  left: 20px;
 }
 
-.Home_content p {
-  font-size: 1.2rem;
-  margin-bottom: 24px;
+.Home_btnNextHome {
+  right: 20px;
 }
+
+/* Bouton contact */
 
 .Home_btn {
-  background: #3e2f1c;
+  position: absolute;
+  right: 48px;
+  bottom: 26px;
+
+  width: 165px;
+  height: 54px;
+
+  background-color: #74402d;
   color: white;
-  padding: 12px 30px;
+
   border: none;
-  border-radius: 5px;
+  border-radius: 35px;
+
+  font-size: 15px;
+  font-weight: 700;
   text-align: center;
+
   cursor: pointer;
+  z-index: 10;
+
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.18);
 }
 
 .Home_btn:hover {
-  background: #5a3e2b;
+  background-color: #5a2f21;
 }
 
-.Home_carrousel {
-    display: flex;
+/* Responsive */
+
+@media (max-width: 900px) {
+  .Home {
+    padding-top: 100px;
+  }
+
+  .Home_content-top h1 {
+    font-size: clamp(3rem, 11vw, 5rem);
+    gap: 90px;
+    letter-spacing: 3px;
+  }
+
+  .Home_image {
+    width: 210px;
+  }
+
+  .Home_btnPreviousHome {
+    left: 20px;
+  }
+
+  .Home_btnNextHome {
+    right: 20px;
+  }
+
+  .Home_btn {
+    right: 24px;
+    bottom: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .Home_content-top h1 {
+    flex-direction: column;
+    gap: 120px;
+    font-size: 3.5rem;
+  }
+
+  .Home_image {
+    width: 180px;
+  }
+
+  .Home_image-wrapper {
+    top: 52%;
+  }
+
+  .Home_btnPreviousHome,
+  .Home_btnNextHome {
+    display: none;
+  }
+}
+
+
+
+
+/* =========================
+   SECTION BOUTIQUE HOME
+========================= */
+
+.Home_boutique {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  
+  background-color: #d9c7b2;
+  color: #74402d;
+
+  padding: 70px clamp(2px, 6vw, 90px) 9px;
+   
+  overflow-x: hidden;
+}
+
+/* Petit trait horizontal en haut */
+
+.Home_boutiqueLine {
+  width: 270px;
+  height: 1px;
+
+  background-color: rgba(116, 64, 45, 0.35);
+
+  margin: 0 auto 150px;
+}
+
+.Home_boutiqueLineBottom {
+  margin-top: 240px;
+  margin-bottom: 0;
+  background-color: #d9c7b2;
+}
+
+/* Titre EN BOUTIQUE */
+
+.Home_boutiqueTitle {
+
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  margin: 0 auto 0px;
+
+  display: block;
+  text-align: center;
+
+  font-family: "LimelightCustom", serif !important;
+  font-size: clamp(2.5rem, 5vw, 5.5rem);
+  font-weight: 900;
+  line-height: 1;
+
+  color: #74402d;
+  text-transform: uppercase;
+
+  letter-spacing: clamp(5px, 0vw, 0px);
+
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+/* Zone des produits */
+
+.Home_boutiqueList {
+  position: relative;
+
+  width: 100%;
+  max-width: 800px;
+  min-height: 1200px;
+
+  margin: 0 auto;
+}
+
+/* Carte complète : cadre + image + texte */
+
+.Home_boutiqueCard {
+  overflow: visible;
+  position: absolute;
+ 
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Position de chaque carte */
+
+.Home_boutiqueCard1 {
+  right: -30px;
+  top: 90px;
+}
+
+.Home_boutiqueCard2 {
+  left: -550px;
+  top: 450px;
+}
+
+.Home_boutiqueCard3 {
+  left: 150px ;
+  top: 710px;
+}
+
+.Home_boutiqueCard4 {
+  left: 5px;
+  bottom: 0;
+}
+
+/* =========================
+   CADRES IMAGES BOUTIQUE
+========================= */
+
+.Home_boutiqueImageShadow {
+  overflow: visible;
+  filter: drop-shadow(5px 8px 12px rgba(55, 38, 30, 0.35));
+    overflow: visible;
+}
+
+.Home_boutiqueImageWrapper {
+  width: 150px;
+  height: 190px;
+
+  overflow: hidden;
+
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-position: center;
+  mask-position: center;
+
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Masques Formes Canva  */
+
+.Home_shape1 {
+  -webkit-mask-image: url("/images/shapes/cadre-vanille.svg");
+  mask-image: url("/images/shapes/cadre-vanille.svg");
+}
+
+.Home_shape2 {
+  -webkit-mask-image: url("/images/shapes/cadre-cabas.svg");
+  mask-image: url("/images/shapes/cadre-cabas.svg");
+}
+
+.Home_shape3 {
+  -webkit-mask-image: url("/images/shapes/cadre-huile.svg");
+  mask-image: url("/images/shapes/cadre-huile.svg");
+}
+
+.Home_shape4 {
+  -webkit-mask-image: url("/images/shapes/cadre-maison.svg");
+  mask-image: url("/images/shapes/cadre-maison.svg");
+}
+
+/* Taille chaque cadre*/
+
+.Home_boutiqueCard1 .Home_boutiqueImageWrapper {
+  width: 400px;
+  height: 500px;
+}
+
+.Home_boutiqueCard2 .Home_boutiqueImageWrapper {
+  width: 400px;
+  height: 500px;
+}
+
+.Home_boutiqueCard3 .Home_boutiqueImageWrapper {
+  width: 400px;
+  height: 500px;
+}
+
+.Home_boutiqueCard4 .Home_boutiqueImageWrapper {
+  width: 400px;
+  height: 500px;
+  filter: drop-shadow(4px 7px 9px rgba(70, 45, 35, 0.25));
+}
+
+/* Image à l'intérieur du cadre */
+
+.Home_boutiqueImage {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+}
+
+/* Image dans le cadre vanille */
+.Home_boutiqueCard1 .Home_boutiqueImage {
+  transform: scale(1.22) translate(10%, -3%);
+}
+/* Ombre cadre vanille */
+.Home_boutiqueCard1 .Home_boutiqueImageShadow {
+  filter: drop-shadow(-4px 1px 3px rgba(0, 0, 0, 0.63));
+}
+
+
+/* Image dans le cadre cabas */
+.Home_boutiqueCard2 .Home_boutiqueImage {
+  transform: scale(1.18) translate(-4%, 2%);
+}
+/* Ombre cadre cabas */
+.Home_boutiqueCard2 .Home_boutiqueImageShadow {
+  filter: drop-shadow(3px 4.5px 2px rgba(0, 0, 0, 0.63));
+}
+
+
+/* Image dans le cadre huile */
+.Home_boutiqueCard3 .Home_boutiqueImage {
+  transform: scale(0.95) translate(0%, 2%);
+}
+/* Ombre cadre huile */
+.Home_boutiqueCard3 .Home_boutiqueImageShadow {
+  filter: drop-shadow(2px 3.5px 1.8px rgb(0, 0, 0, 0.63));
+}
+
+
+/* Image dans le cadre maison */
+.Home_boutiqueCard4 .Home_boutiqueImage {
+  transform: scale(1.25) translate(-6%, 4%);
+}
+/* Ombre cadre maison */
+.Home_boutiqueCard4 .Home_boutiqueImageShadow {
+  filter: drop-shadow(30px 30px 10px rgb(0, 0, 0, 0.548));
+}
+
+
+/* Texte à côté de l'image */
+
+.Home_boutiqueLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  font-family: "LimelightCustom", serif;
+  font-size: 2.30rem;
+  font-weight: 900;
+  line-height: 0.95;
+  transform: translateX(-40px);
+
+  color: #74402d;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.Home_boutiqueArrow {
+  margin-top: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+@media (max-width: 900px) {
+  .Home_boutique {
+    padding: 60px 24px 80px;
+  }
+
+  .Home_boutiqueList {
+    max-width: 100%;
+    min-height: auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px 20px;
+  }
+
+  .Home_boutiqueCard {
+    position: static;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .Home_boutiqueLabel {
     align-items: center;
-    justify-content: center;
-    gap: 6px;
-    width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .Home_boutiqueImageWrapper {
+    width: 120px;
+    height: 150px;
+  }
 }
 
-.Home_productsList {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
+@media (max-width: 600px) {
+  .Home_boutiqueList {
+    grid-template-columns: 1fr;
+  }
+
+  .Home_boutiqueTitle {
+    font-size: 3rem;
+  }
 }
 
-.Home_btnPrevious,
-.Home_btnNext {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: none;
-    font-size: 28px;
-    cursor: pointer;
+/* =========================
+   CARROUSEL PRODUCTS VEDETTE HOME
+========================= */
+
+.Home_carrousel_products {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 60px;
+  box-sizing: border-box;
+}
+
+.Home_carrousel_products h1 {
+  text-align: center;
+  font-family: "LimelightCustom", serif;
+  margin-bottom: 35px;
+  font-size: 2rem;
+}
+
+
+/* Liste des produits */
+.Home_productsList_products {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 25px;
+
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Images des produits du carrousel */
+.Home_productsList_products .ProductCard_img {
+  width: 250px;
+  height: 200px;
+
+  object-fit: cover;
+  object-position: center 35%;
+
+   transform: scale(0.98);   /* Dézoom léger de l'image */
+}
+
+/* Boutons du carrousel */
+.Home_btnNext_products,
+.Home_btnPrevious_products {
+  position: absolute;
+  top: 55%;
+  transform: translateY(-50%);
+
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+
+  font-size: 24px;
+  cursor: pointer;
+
+  z-index: 5;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+
+/* Flèche gauche */
+.Home_btnNext_products {
+  left: 5px;
+}
+
+
+/* Flèche droite */
+.Home_btnPrevious_products {
+  right: 5px;
+}
+
+
+.Home_btnNext_products:hover,
+.Home_btnPrevious_products:hover {
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   RESPONSIVE CARROUSSEL PRODUCTS
+========================= */
+
+@media (max-width: 900px) {
+
+  .Home_carrousel_products {
+    padding: 0 50px;
+  }
+
+  .Home_productsList_products {
+    gap: 15px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .Home_carrousel_products {
+    padding: 0 40px;
+    margin: 40px auto;
+  }
+
+  .Home_carrousel_products h1 {
+    font-size: 1.5rem;
+  }
+
+  .Home_productsList_products {
+    justify-content: flex-start;
+  }
+
+  .Home_btnNext_products,
+  .Home_btnPrevious_products {
+    width: 38px;
+    height: 38px;
+    font-size: 20px;
+  }
+
 }

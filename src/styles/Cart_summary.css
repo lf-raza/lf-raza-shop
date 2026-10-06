@@ -1,0 +1,209 @@
+/* =========================
+   CART SUMMARY BLOCK
+========================= */
+
+.Cart_summaryBlock {
+  background-color: #fffaf3;
+  border-radius: 20px;
+  padding: 26px;
+  box-shadow: 0 8px 24px rgba(75, 46, 20, 0.1);
+}
+
+.Cart_summary {
+  width: 100%;
+  color: #3a2111;
+}
+
+.Cart_summary h2 {
+  margin: 0 0 24px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #4b2e14;
+}
+
+/* =========================
+   CODE PROMO
+========================= */
+
+.promoCode {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.promoCode input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid #c9a985;
+  border-radius: 12px;
+  background-color: #fff;
+  color: #3a2111;
+  font-size: 15px;
+}
+
+.promoCode input::placeholder {
+  color: #9b8065;
+}
+
+.promoCode input:focus {
+  outline: none;
+  border-color: #6a3f2b;
+  box-shadow: 0 0 0 3px rgba(106, 63, 43, 0.15);
+}
+
+.promoCode button {
+  padding: 13px 16px;
+  border: none;
+  border-radius: 12px;
+  background-color: #6a3f2b;
+  color: #fffaf3;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
+}
+
+.promoCode button:hover:not(:disabled) {
+  background-color: #4b2e14;
+  transform: translateY(-1px);
+}
+
+.promoCode button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Message promo si tu l'affiches ensuite */
+.promoMessage {
+  margin: -14px 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6f4a33;
+}
+
+/* =========================
+   LIGNES RECAP
+========================= */
+
+.Cart_summary > div:not(.promoCode):not(.cartTotal) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 12px 0;
+  border-bottom: 1px solid #ead7c4;
+  font-size: 16px;
+}
+
+.Cart_summary > div:not(.promoCode):not(.cartTotal) span:first-child {
+  color: #6f4a33;
+  font-weight: 600;
+}
+
+.Cart_summary > div:not(.promoCode):not(.cartTotal) span:last-child {
+  color: #3a2111;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* Total */
+.cartTotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px solid #d7b895;
+  font-size: 22px;
+  color: #2f1b0c;
+}
+
+.cartTotal strong:last-child {
+  font-size: 26px;
+  color: #4b2e14;
+  white-space: nowrap;
+}
+
+/* =========================
+   BOUTON PAIEMENT
+========================= */
+
+.cart_checkout_btn {
+  width: 100%;
+  margin-top: 28px;
+  padding: 16px 22px;
+  border: none;
+  border-radius: 999px;
+  background-color: #4b2e14;
+  color: #fffaf3;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease, opacity 0.15s ease;
+}
+
+.cart_checkout_btn:hover:not(:disabled) {
+  background-color: #2f1b0c;
+  transform: translateY(-1px);
+}
+
+.cart_checkout_btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 700px) {
+  .Cart_summaryBlock {
+    padding: 20px;
+    border-radius: 16px;
+  }
+
+  .Cart_summary h2 {
+    font-size: 24px;
+  }
+
+  .promoCode {
+    flex-direction: column;
+  }
+
+  .promoCode button {
+    width: 100%;
+  }
+
+  .cartTotal {
+    font-size: 19px;
+  }
+
+  .cartTotal strong:last-child {
+    font-size: 22px;
+  }
+
+  .cart_checkout_btn {
+    font-size: 16px;
+    padding: 15px 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .Cart_summaryBlock {
+    padding: 16px;
+  }
+
+  .Cart_summary > div:not(.promoCode):not(.cartTotal) {
+    font-size: 15px;
+  }
+
+  .cartTotal {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
