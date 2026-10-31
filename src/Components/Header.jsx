@@ -12,6 +12,7 @@ import {supabase} from "../lib/supabaseClient";
 function Header({addToCart, increaseQuantity, decreaseQuantity, removeFromCart, cart, user, profile, setUser, setProfile, checkUserIdentity, session}) {
   const totalItems = cart.reduce((acc, item) => acc + item.quantity, 0);
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const [isOpenMenuMobile, setIsOpenMenuMobile] = useState(false);
   const [isOpenCart, setIsOpenCart] = useState(false);
   const navigate = useNavigate();
 
@@ -41,7 +42,15 @@ function Header({addToCart, increaseQuantity, decreaseQuantity, removeFromCart, 
             <img src={logo_img} alt="L&F RAZA Logo" className="Header_logo-img" />
           </Link>
         </div>
-        <nav className="Header_main-liste">
+
+        <button
+          className="Header_btn-menuDeroulantMobile"
+          onClick={()=> setIsOpenMenuMobile(!isOpenMenuMobile)}
+        >
+          ☰
+        </button>
+
+        <nav className={`Header_main-liste ${isOpenMenuMobile ? "Header_navOpen" : ""}`}>
           <ul>                 
             <li>
               <Link to="/">Accueil</Link>
@@ -115,7 +124,6 @@ function Header({addToCart, increaseQuantity, decreaseQuantity, removeFromCart, 
 
         <Link to="/Cart" className="Header_cart">
           <img src={cart_img} alt="cart" className="Header_cart-img" />
-          Mon panier
         </Link>
         <span className="Header_cart-count">
           {totalItems}
